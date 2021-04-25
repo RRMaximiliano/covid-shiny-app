@@ -1,0 +1,31 @@
+---
+title: "info"
+output: html_document
+---
+
+## Información sobre esta aplicación
+
+Esta shiny app tiene como objetivo presentar de manera rápida y eficiente la información de los casos y muertes acumuladas de coronavirus en Nicaragua. Esta información proviene del [Observatorio Ciudadano COVID-19 Nicaragua](https://observatorioni.org/) para los casos y muertes sospechosas, y del Ministerio de Salud de Nicaragua (MINSA) para los casos y muertes confirmadas.
+
+Actualmente, los datos contienen información del 18 de marzo al 18 de Noviembre (último día disponible) del Obsevatorio y hasta el 28 de Noviembre del MINSA. En caso de requerir información sobre los casos del MINSA, sugiero utilizar la información de la [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/). De igual forma pueden usar el paquete [COVID19](https://covid19datahub.io/index.html) en R, el cual contiene información de número de casos y muertes oficiales.
+
+## Variables
+
+Las siguientes variables se encuentran disponibles:
+
+* Observatorio Ciudadad COVID-19:
+
+  - `date`: Fecha.
+  - `departamento`: Departamento.
+  - `cases`: Acumulado de casos sospechosos COVID-19 reportados por el Observatorio Ciudadano.
+  - `deaths`: Acumulado de muertes sospechosas COVID-19 reportados por el Observatorio Ciudadano.
+  
+* Ministerio de Salud de Nicaragua: 
+  - `date`: Fecha.
+  - `cases`: Acumulado de casos confirmados de COVID-19 reportados por el MINSA.
+  - `deaths`: Acumulado de muertes confirmado de COVID-19 reportados por el MINSA.
+  
+## Comentarios y sugerencias
+
+Para realizar comentarios o sugerencias sobre la base de datos puedes escribirme a rodriguezramirez@worldbank.org o abrir un issue en este repositorio:
+<https://github.com/rrmaximiliano/observatorio-covid-nicaragua/issues>
