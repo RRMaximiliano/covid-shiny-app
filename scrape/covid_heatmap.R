@@ -1,12 +1,22 @@
+
+# Packages ----------------------------------------------------------------
+
 library(hrbrthemes)
+library(tidyverse)
 library(ggtext)
 library(scales)
 library(patchwork)
+
+
+# Load data ---------------------------------------------------------------
 
 full_df <- read_rds(here("data", "final", "observatorio_nicaragua_dep.Rds"))
 
 roboto = "Roboto Condensed"
 brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03")
+
+
+# Cases -------------------------------------------------------------------
 
 cases_df <- full_df %>% 
 	group_by(departamento) %>% 
@@ -27,6 +37,9 @@ cases_df <- full_df %>%
 		cases = ifelse(cases == 0, NA, cases)
 	)
 
+
+# Deaths ------------------------------------------------------------------
+
 deaths_df <- full_df %>% 
 	group_by(departamento) %>% 
 	mutate(
@@ -45,6 +58,9 @@ deaths_df <- full_df %>%
 	mutate(
 		deaths = ifelse(deaths == 0, NA, deaths)
 	)
+
+
+# Plots -------------------------------------------------------------------
 
 p1 <- cases_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = cases)) +
@@ -99,6 +115,9 @@ p2 <- deaths_df %>%
 		legend.position = "top",
 		legend.title = element_text(family = roboto)
 	)
+
+
+# Final plot and save -----------------------------------------------------
 
 patchwork <- p1 + p2
 

@@ -1,11 +1,23 @@
+
+# Packages ----------------------------------------------------------------
+
 library(lubridate)
 library(hrbrthemes)
+library(tidyverse)
+library(lubridate)
+library(scales)
+library(ggtext)
+library(here)
+
+
+# Load df -----------------------------------------------------------------
 
 df_country <- read_csv("data/observatorio_nicaragua.csv")
 
 Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
+roboto = "Roboto Condensed"
 
-# Cases
+## Cases ----
 df_country %>% 
   mutate(
     cases2 = cases - lag(cases), 
@@ -21,8 +33,8 @@ df_country %>%
   ) %>%
   group_by(floor) %>%
   summarize(
-    sum_cases = sum(cases2),
-    sum_deaths = sum(deaths2)
+    sum_cases = sum(cases2, na.rm = TRUE),
+    sum_deaths = sum(deaths2, na.rm = TRUE)
   ) %>% 
   ggplot(aes(x = floor, y = sum_cases, fill = ifelse(floor >= "2021-01-01", TRUE, FALSE))) +
     geom_col(color = "black") + 
@@ -37,19 +49,23 @@ df_country %>%
       x = "", 
       y = "Casos sospechosos por mes", 
       title = "Casos sospechosos acumulados de coronavirus por mes en Nicaragua",
-      subtitle = "Datos actualizados al 6 de enero de 2021",
       caption = "Datos: Observatorio Ciudadano COVID-19 | Plot: @rrmaximiliano"
     ) +   
-    theme_ipsum_rc() + 
-    theme(
-      legend.position = "none", 
-      panel.grid.major.x = element_blank(),
-      panel.grid.minor.x = element_blank()
-    )
+  theme_ipsum_rc(base_size = 14) +
+  theme(
+    axis.title.x = element_text(hjust = 0.5, size = 12),
+    axis.title.y = element_text(hjust = 0.5, size = 12),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(), 
+    # plot.title = element_markdown(),
+    legend.position = "none",
+    # legend.title = element_text(family = roboto)
+  )
 
-ggsave("figs/cases.png", dpi = "retina", height = 8, width = 12, scale = 0.8)
+ggsave(here("figs", "cases.png"),
+       dpi = 320, height = 10, width = 20, scale = 0.8)
 
-# Deaths
+## Deaths ----
 df_country %>% 
   mutate(
     cases2 = cases - lag(cases), 
@@ -65,8 +81,8 @@ df_country %>%
   ) %>% 
   group_by(floor) %>% 
   summarize(
-    sum_cases = sum(cases2),
-    sum_deaths = sum(deaths2)
+    sum_cases = sum(cases2, na.rm = TRUE),
+    sum_deaths = sum(deaths2, na.rm = TRUE)
   ) %>% 
   ggplot(aes(x = floor, y = sum_deaths, fill = ifelse(floor > "2021-01-01", TRUE, FALSE))) +
   geom_col(color = "black") + 
@@ -81,15 +97,19 @@ df_country %>%
     x = "", 
     y = "Muertes sospechosas por mes", 
     title = "Muertes sospechosas acumuladas de coronavirus por mes en Nicaragua",
-    subtitle = "Datos actualizados al 6 de enero de 2021",
     caption = "Datos: Observatorio Ciudadano COVID-19 | Plot: @rrmaximiliano"
   ) +   
-  theme_ipsum_rc() + 
+  theme_ipsum_rc(base_size = 14) +
   theme(
-    legend.position = "none", 
+    axis.title.x = element_text(hjust = 0.5, size = 12),
+    axis.title.y = element_text(hjust = 0.5, size = 12),
     panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.minor.x = element_blank(), 
+    # plot.title = element_markdown(),
+    legend.position = "none",
+    # legend.title = element_text(family = roboto)
   )
 
-ggsave("figs/deaths.png", dpi = "retina", height = 8, width = 12, scale = 0.8)
+ggsave(here("figs", "deaths.png"),
+       dpi = 320, height = 10, width = 20, scale = 0.8)
 
