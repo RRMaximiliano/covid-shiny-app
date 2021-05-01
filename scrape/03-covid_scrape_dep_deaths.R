@@ -1,3 +1,13 @@
+
+# Packages ----------------------------------------------------------------
+
+library(httr)
+library(jsonlite)
+library(tidyverse)
+library(lubridate)
+library(here)
+library(zoo)
+
 # Function ----------------------------------------------------------------
 
 # URLS and queries
@@ -11,6 +21,10 @@ queries <- lapply(files, readLines)
 
 
 # Create the function
+
+if(exists("df")){
+	rm(df)
+}
 
 postfunction <- function(sym) {
 	
@@ -72,7 +86,10 @@ muertes %>%
 	write_rds(here("data", "final", "observatorio_nicaragua_dep_deaths.Rds")) 
 
 
+# Merge with cases to get full dep data -----------------------------------
+
 # Merge with cases
+
 cases <- read_rds(here("data", "final", "observatorio_nicaragua_dep_cases.Rds"))
 
 full_df <- cases %>% 

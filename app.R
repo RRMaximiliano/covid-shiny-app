@@ -57,7 +57,7 @@ ui <- navbarPage("Coronavirus: Nicaragua",
                  theme = shinytheme("paper"),
                  tabPanel("Observatorio Ciudadano COVID-19",
                           sidebarLayout(
-                            sidebarPanel(position = "left", width = 3, 
+                            sidebarPanel(position = "left", width = 3,
                                          selectInput("dataset", 
                                                      "Seleccione nivel:",
                                                      c("Nacional" = "country",

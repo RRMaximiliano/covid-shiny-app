@@ -6,7 +6,7 @@ library(tidyverse)
 library(ggtext)
 library(scales)
 library(patchwork)
-
+library(here)
 
 # Load data ---------------------------------------------------------------
 
@@ -65,7 +65,7 @@ deaths_df <- full_df %>%
 p1 <- cases_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = cases)) +
 	geom_tile() + 
-	scale_x_discrete(breaks = brks) + 
+	scale_x_discrete(breaks = brks, guide = guide_axis(check.overlap = TRUE)) + 
 	scale_y_discrete(limits = rev) +
 	scale_fill_viridis_c(option = "magma", direction = -1, trans = "sqrt", na.value="white", labels = comma) +
 	coord_cartesian(expand = FALSE) +
@@ -92,7 +92,7 @@ p1 <- cases_df %>%
 p2 <- deaths_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = deaths)) +
 	geom_tile() + 
-	scale_x_discrete(breaks = brks) + 
+	scale_x_discrete(breaks = brks, guide = guide_axis(check.overlap = TRUE)) + 
 	scale_y_discrete(limits = rev) +
 	scale_fill_viridis_c(option = "magma", direction = -1, trans = "sqrt", na.value = "white") +
 	coord_cartesian(expand = FALSE) +

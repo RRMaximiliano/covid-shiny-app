@@ -1,3 +1,13 @@
+
+# Packages ----------------------------------------------------------------
+
+library(httr)
+library(jsonlite)
+library(tidyverse)
+library(lubridate)
+library(here)
+library(zoo)
+
 # Function ----------------------------------------------------------------
 
 # URLS and queries
@@ -10,6 +20,10 @@ files <- list.files(path = here("query", "dep", "casos"),
 queries <- lapply(files, readLines)
 
 # Create the function
+
+if(exists("df")){
+	rm(df)
+}
 
 postfunction <- function(sym) {
 	

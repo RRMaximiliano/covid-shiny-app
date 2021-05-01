@@ -37,17 +37,15 @@ casos <- map_dfr(data, ~ as.data.frame(t(.))) %>%
 	select(date, acumulado, casos) %>% 
 	as_tibble()
 
-# Save dataset 
+	# Save dataset 
 
 casos %>% 
-	write_csv(here("data", "final", "covid_nic.csv")) 
+	write_csv(here("data", "final", "covid_cases_nic.csv")) 
 
 casos %>% 
-	write_rds(here("data", "final", "covid_nic.Rds")) 
+	write_rds(here("data", "final", "covid_cases_nic.Rds")) 
 
 # Deaths ------------------------------------------------------------------
-
-url <- "https://wabi-north-europe-api.analysis.windows.net/public/reports/querydata?synchronous=true"
 
 query <- readLines(here("query", "deaths.txt"))
 
