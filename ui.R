@@ -87,7 +87,7 @@ shinyUI(
 						 		)
 						 	)
 						 ),
-		tabPanel("Mapa departamental",
+		tabPanel("Mapa departamental COVID",
 						 sidebarLayout(
 						 	sidebarPanel(position = "left", width = 3, 
 						 							 selectInput("selectedvariable_map",
@@ -103,6 +103,30 @@ shinyUI(
 						 		)
 						 	)
 						 ), 
+		tabPanel("Vacunas",
+						 sidebarLayout(
+						 	sidebarPanel(
+						 		position = "left", width = 3, 
+						 		selectInput("countries", 
+						 								label = "Elige país a comparar con Nicaragua:", 
+						 								selected = "Costa Rica",
+						 								choices = vaccines$location %>% unique %>% sort %>% .[. != "Nicaragua"],
+						 								multiple = TRUE),
+						 		selectInput("selectedvariable_vaccines",
+						 								label = "Seleccione variable:",
+						 								choices = c("Total vacunas" = "total_vaccinations",
+						 														"Personas vacunas" = "people_vaccinated",
+						 														"Personas completamente vacunadas" = "people_fully_vaccinated")),
+						 		downloadButton("data_vacunas.csv", "Descargar datos"),
+						 		tags$br(),
+						 		tags$br(),
+						 		tags$p("Notas: Los datos provienen de la compilación de datos de Our World in Data. Nicaragua todavía no presenta personas completamente vacunadas.")
+						 ),
+						 mainPanel(
+						 	plotlyOutput("plot_vacunas")
+						 )
+					 )
+					),
 		tabPanel("Info",
 						 tags$head(
 						 	tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")

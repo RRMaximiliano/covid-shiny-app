@@ -98,7 +98,8 @@ shinyServer(function(input, output, session) {
                 scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
                 labs(color = "",
                      x = "Fecha",
-                     y = y_label()) 
+                     y = y_label(),
+                     title = y_label()) 
             
             if(input$logarithmicY) {
                 plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
@@ -117,7 +118,8 @@ shinyServer(function(input, output, session) {
                 scale_y_continuous(labels = comma) + 
                 scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
                 labs(x = "Fecha",
-                     y = y_label()) 
+                     y = y_label(),
+                     title = y_label()) 
             
             if(input$logarithmicY)
                 plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
@@ -136,7 +138,8 @@ shinyServer(function(input, output, session) {
             scale_y_continuous(labels = comma) + 
             scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
             labs(x = "Fecha",
-                 y = y_label_minsa()) 
+                 y = y_label_minsa(),
+                 title = y_label_minsa()) 
         
         if(input$logarithmicY_minsa)
             plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
@@ -178,7 +181,8 @@ shinyServer(function(input, output, session) {
                 scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
                 labs(fill = "",
                      x = "Fecha",
-                     y = y_label()) 
+                     y = y_label(),
+                     title = y_label()) 
             
             if(input$logarithmicY)
                 plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
@@ -209,7 +213,8 @@ shinyServer(function(input, output, session) {
                 scale_y_continuous(labels = comma) + 
                 scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
                 labs(x = "Fecha",
-                     y = y_label()) 
+                     y = y_label(),
+                     title = y_label()) 
             
             if(input$logarithmicY)
                 plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
@@ -238,7 +243,8 @@ shinyServer(function(input, output, session) {
             scale_y_continuous(labels = comma) + 
             scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%b/%Y")) + 
             labs(x = "Fecha",
-                 y = y_label_minsa()) + 
+                 y = y_label_minsa(),
+                 title = y_label_minsa()) + 
             theme_ipsum_rc()
         
         if(input$logarithmicY_minsa)
@@ -306,7 +312,68 @@ shinyServer(function(input, output, session) {
     )
     
 
+# Vaccines ----------------------------------------------------------------
 
+    y_label_vacunas <- reactive({
+        req(input$selectedvariable_vaccines)
+        
+        if(input$selectedvariable_vaccines == "total_vaccinations"){
+            
+            y_label <- "# de vacunas administradas"
+        
+        } else if (input$selectedvariable_vaccines == "people_vaccinated"){
+            
+            y_label <- "Personas vacunadas"
+            
+        } else if (input$selectedvariable_vaccines == "people_fully_vaccinated"){
+         
+            y_label <- "Personas completamente vacunadas"
+               
+        }
+        
+    })  
+    
+    output$plot_vacunas <- renderPlotly({
+    
+        plot <- vaccines %>%
+        	filter(!is.na(!!rlang::sym(input$selectedvariable_vaccines))) %>%
+            filter(location %in% c(input$countries, "Nicaragua")) %>% 
+        	ggplot(aes(x = date, group = location, color = location)) +
+        	geom_line(size = 1.2, alpha = 0.8, aes_string(y = input$selectedvariable_vaccines)) +
+        	geom_point(alpha = 0.6, aes_string(y = input$selectedvariable_vaccines)) +
+        	scale_y_continuous(labels = comma) +
+        	scale_color_viridis_d(option = "turbo") +
+        	scale_x_date(breaks = date_breaks("1 months"), labels = date_format("%m/%Y")) +
+        	labs(
+        		y = y_label_vacunas(),
+        		x = "",
+        		color = "",
+        		title = y_label_vacunas()
+        	)
+        
+        ggplotly(plot, height = 600, width = 900, margin = list(b = 50, l = 50)) 
+    })    
+
+    ## Descargar datos de vacunas ----
+    tableData_vacunas <- reactive({
+        
+        vaccines %>% 
+            ungroup() %>% 
+            mutate(source = "Our World in Data") %>% 
+            select(source, everything()) %>%
+            arrange(desc(date))
+
+    })  
+    
+    output$data_vacunas.csv <- downloadHandler(
+        filename = function() {
+            paste("vacunas-", Sys.Date(), ".csv", sep="")
+        },
+        content = function(file) {
+            write.csv(tableData_vacunas(), file, row.names = FALSE)
+        }
+    )
+    
 # Download bottom ---------------------------------------------------------
 
     ## Observatorio ----
@@ -358,7 +425,7 @@ shinyServer(function(input, output, session) {
             name = ifelse(code == "AS", "RACCS", name),
             name = ifelse(code == "AN", "RACCN", name),
             name = ifelse(code == "RS", "Río San Juan", name),
-            departamento = name, 
+            departamento = name
         ) %>% 
         left_join(last_day) 
     
