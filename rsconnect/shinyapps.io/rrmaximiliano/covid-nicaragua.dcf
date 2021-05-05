@@ -5,10 +5,10 @@ account: rrmaximiliano
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3299136
-bundleId: 4559039
+bundleId: 4560640
 url: https://rrmaximiliano.shinyapps.io/covid-nicaragua/
-when: 1620197878.1968
-lastSyncTime: 1620197878.1968
+when: 1620223654.9174
+lastSyncTime: 1620223654.9174
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: app.R|figs/cases.png|figs/deaths.png
+ignoredFiles: archive/app.R|figs/cases.png|figs/deaths.png|scrape

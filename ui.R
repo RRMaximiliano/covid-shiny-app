@@ -115,7 +115,7 @@ shinyUI(
 						 		selectInput("selectedvariable_vaccines",
 						 								label = "Seleccione variable:",
 						 								choices = c("Total vacunas" = "total_vaccinations",
-						 														"Personas vacunas" = "people_vaccinated",
+						 														"Personas vacunadas" = "people_vaccinated",
 						 														"Personas completamente vacunadas" = "people_fully_vaccinated")),
 						 		downloadButton("data_vacunas.csv", "Descargar datos"),
 						 		tags$br(),
