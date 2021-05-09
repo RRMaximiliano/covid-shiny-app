@@ -12,7 +12,7 @@ library(here)
 
 # Load df -----------------------------------------------------------------
 
-df_country <- read_csv("data/observatorio_nicaragua.csv")
+df_country <- read_csv(here("data", "final", "observatorio_nicaragua.csv"))
 
 Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
 roboto = "Roboto Condensed"
@@ -62,7 +62,7 @@ df_country %>%
     # legend.title = element_text(family = roboto)
   )
 
-ggsave(here("figs", "cases.png"),
+ggsave(here("plots", "cases.png"),
        dpi = 320, height = 10, width = 20, scale = 0.8)
 
 ## Deaths ----
@@ -110,6 +110,6 @@ df_country %>%
     # legend.title = element_text(family = roboto)
   )
 
-ggsave(here("figs", "deaths.png"),
+ggsave(here("plots", "deaths.png"),
        dpi = 320, height = 10, width = 20, scale = 0.8)
 

@@ -1,5 +1,5 @@
 
-### Información sobre esta aplicación
+# COVID-19 Shiny App: Nicaragua
 
 Esta shiny app tiene como objetivo presentar de manera rápida y
 eficiente la información de los casos y muertes acumuladas de
@@ -14,7 +14,7 @@ and Control](https://www.ecdc.europa.eu/). De igual forma pueden usar el
 paquete [COVID19](https://covid19datahub.io/index.html) en R, el cual
 contiene información de número de casos y muertes oficiales.
 
-### Datos
+## Datos
 
 Las siguientes bases de datos se encuentran disponibles en esta
 aplicación:
@@ -38,6 +38,18 @@ aplicación:
     compilación realizada por Our World in Data, en este
     [repositorio](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations)
     pueden encontrar información sobre la fuente de cada país.
+
+## Figuras
+
+<img src="figs/cases.png" width="5120" />
+
+<img src="figs/deaths.png" width="5120" />
+
+<img src="figs/heat_map.png" width="5120" />
+
+<img src="figs/accum_weeks.png" width="4096" />
+
+<img src="figs/accum_weeks_comp.png" width="4096" />
 
 ### Comentarios y sugerencias
 
