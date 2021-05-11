@@ -14,5 +14,6 @@ library(zoo)
 source("01-covid_scrape.R")
 source("02-covid_scrape_dep.R")
 source("03-covid_scrape_dep_deaths.R")
+source("07-workers_scrape.R")
 
 # End 

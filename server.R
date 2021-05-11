@@ -72,7 +72,7 @@ shinyServer(function(input, output, session) {
     output$vbox2_minsa <- renderInfoBox({ 
         infoBox(
             title = tags$p(format(max_muertes_minsa, big.mark = ","), style = "font-size: 150%;"),
-            subtitle = tags$p("Muertes confirmandas", style = "font-size: 120%;"),
+            subtitle = tags$p("Muertes confirmadas", style = "font-size: 120%;"),
             icon  = icon("users"),
             color = "black",
             fill = TRUE
@@ -346,7 +346,7 @@ shinyServer(function(input, output, session) {
         	scale_x_date(breaks = date_breaks("1 months"), labels = date_format("%m/%Y")) +
         	labs(
         		y = y_label_vacunas(),
-        		x = "",
+        		x = "Fecha",
         		color = "",
         		title = y_label_vacunas()
         	)
@@ -373,6 +373,93 @@ shinyServer(function(input, output, session) {
             write.csv(tableData_vacunas(), file, row.names = FALSE)
         }
     )
+    
+
+# Health Workers ----------------------------------------------------------
+    ## BOXES ----
+    max_date_workers <- workers %>% 
+        filter(date == max(date))
+    
+    max_casos_workers   <- max_date_workers$cases
+    max_muertes_workers <- max_date_workers$deaths
+
+    output$vbox1_workers <- renderInfoBox({
+        infoBox(
+            title = tags$p(format(max_casos_workers, big.mark = ","), style = "font-size: 150%;"),
+            subtitle = tags$p("Casos sospechosos", style = "font-size: 120%;"),
+            icon  = icon("users"),
+            color = "black",
+            fill = TRUE
+        )
+    })
+    
+    output$vbox2_workers <- renderInfoBox({ 
+        infoBox(
+            title = tags$p(format(max_muertes_workers, big.mark = ","), style = "font-size: 150%;"),
+            subtitle = tags$p("Muertes sospechosas", style = "font-size: 120%;"),
+            icon  = icon("users"),
+            color = "black",
+            fill = TRUE
+        )
+    })    
+    
+    ## Y LABEL WORKERS ----
+    y_label_workers <- reactive({
+        req(input$selectedvariable_workers)
+        
+        if(input$selectedvariable_workers == "cases"){
+            
+            y_label <- "Casos sospechosos"
+            
+        } else if (input$selectedvariable_workers == "deaths"){
+            
+            y_label <- "Muertes sospechosas"
+            
+        } 
+    }) 
+    
+    ## PLOTS ----
+    output$plot_workers <- renderPlotly({
+        
+        ## Country level ----
+        plot <- workers %>% 
+            ggplot(aes(x = date)) + 
+            geom_line(aes_string(y = input$selectedvariable_workers), size = 1.125) +
+            scale_y_continuous(labels = comma) + 
+            scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) + 
+            labs(
+                x = "Fecha",
+                y = y_label_workers(), 
+                title = y_label_workers()
+            ) 
+        
+        if(input$logarithmicY_workers)
+            plot <- plot + scale_y_log10(labels = comma_format(accuracy = 1))
+        
+        ggplotly(plot, height = 600, width = 900, margin = list(b = 50, l = 50))
+        
+    })
+    
+    
+    ## Descargar datos de vacunas ----
+    tableData_workers <- reactive({
+        
+        workers %>% 
+            ungroup() %>% 
+            mutate(source = "Observatorio Ciudadano COVID-1") %>% 
+            select(source, everything()) %>%
+            arrange(desc(date))
+        
+    })  
+    
+    output$data_workers.csv <- downloadHandler(
+        filename = function() {
+            paste("health-workers-", Sys.Date(), ".csv", sep = "")
+        },
+        content = function(file) {
+            write.csv(tableData_workers(), file, row.names = FALSE)
+        }
+    )    
     
 # Download bottom ---------------------------------------------------------
 

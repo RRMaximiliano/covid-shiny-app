@@ -127,6 +127,33 @@ shinyUI(
 						 )
 					 )
 					),
+		tabPanel("Trabajadores de la Salud",
+						 sidebarLayout(
+						 	sidebarPanel(
+						 		position = "left", width = 3 ,
+						 		selectInput("selectedvariable_workers",
+						 								label = "Selecciones variable:",
+						 								choices = c("Casos sospechosos" = "cases",
+						 														"Muertes sospechosas" = "deaths")),
+						 		checkboxInput("logarithmicY_workers", "Escala log", FALSE),
+						 		downloadButton("data_workers.csv", "Descargar datos"),
+						 		tags$br(),
+						 		tags$br(),
+						 		tags$p("Notas: Las figuras presentan los casos y muertes sospechosas por COVID-19 en trabajadores de la salud en Nicaragua que fueron reportados al Observatorio Ciudadano COVID-19.")
+						 	),
+						 	mainPanel(
+						 		fluidRow(
+						 			infoBoxOutput(
+						 				"vbox1_workers",
+						 				width = 4),
+						 			infoBoxOutput(
+						 				"vbox2_workers",
+						 				width = 4)
+						 		),
+						 		plotlyOutput("plot_workers")
+						 	)
+						 )
+						),
 		tabPanel("Info",
 						 tags$head(
 						 	tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")

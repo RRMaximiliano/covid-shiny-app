@@ -24,6 +24,7 @@ df_country <- read_csv("data/observatorio_nicaragua.csv")
 df_minsa   <- read_csv("data/minsa.csv")
 mapdata    <- read_rds("data/mapdata.rds")
 vaccines   <- read_csv("data/vaccines.csv")
+workers    <- read_rds("data/health_workers.Rds")
 
 # COVID19::covid19("Nicaragua") %>%
 #   select(id, date, confirmed, deaths) %>%
@@ -32,7 +33,7 @@ vaccines   <- read_csv("data/vaccines.csv")
 #   write_csv("data/minsa.csv")
 # 
 # read_csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv") %>%
-# 	filter(location %in% c("Nicaragua", "Costa Rica", "El Salvador", "Honduras", "Guatemala", "Belize", "Panama")) %>% 
+# 	filter(location %in% c("Nicaragua", "Costa Rica", "El Salvador", "Honduras", "Guatemala", "Belize", "Panama")) %>%
 # 	write_csv("data/vaccines.csv")
 
 # Theme update ------------------------------------------------------------
