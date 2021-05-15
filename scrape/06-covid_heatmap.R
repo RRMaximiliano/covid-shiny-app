@@ -10,7 +10,7 @@ library(here)
 
 # Load data ---------------------------------------------------------------
 
-full_df <- read_rds(here("data", "final", "observatorio_nicaragua_dep.Rds"))
+full_df <- read_csv(here("data", "final", "observatorio_nicaragua_dep.csv"))
 
 roboto = "Roboto Condensed"
 brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03")

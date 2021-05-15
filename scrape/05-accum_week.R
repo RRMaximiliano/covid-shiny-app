@@ -35,7 +35,7 @@ df <- nacional %>%
 		year = year(date),
 		month = month(date)
 	) %>% 
-	# filter(year == 2021) %>% 
+	filter(year == 2021) %>%
 	mutate(
 		cases2 = cases - lag(cases)
 	)
@@ -62,6 +62,18 @@ df %>%
 ggsave(here::here("plots", "accum_weeks.png"),
 			 dpi = 320, height = 9, width = 16, scale = 0.8)
 
+
+df <- nacional %>% 
+	mutate(
+		week = week(date),
+		week2 = isoweek(date),
+		year = year(date),
+		month = month(date)
+	) %>% 
+	# filter(year == 2021) %>%
+	mutate(
+		cases2 = cases - lag(cases)
+	)
 
 df_comp <- df %>% 
 	group_by(year, week2) %>% 
@@ -91,7 +103,7 @@ df_comp %>%
 		y = "Número de casos sospechosos por semanas", 
 		title = "Total de casos sospechosos por semanas en el año <span style = 'color:#028482;'>2020</span>
 y <span style = 'color:#983732;'>2021</span> de COVID-19 en Nicaragua",
-		subtitle = "La semana 18 del año 2021 (semana del 3 de mayo 2021) solo contiene información para los días lunes y martes; por lo tanto, se ha omitido.\nLa línea punteada indica la semana 12 del año 2020. La cual fue la primera semana con casos sospechosos reportados.", 
+		subtitle = "La línea punteada indica la semana 12 del año 2020. La cual fue la primera semana con casos sospechosos reportados.", 
 		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua | Plot: @rrmaximiliano \nÚltimo día de actualización: ", format(max_date, "%d-%m-%Y"))
 	) +
 	theme(
