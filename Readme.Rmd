@@ -27,27 +27,33 @@ Las siguientes bases de datos se encuentran disponibles en esta aplicación:
   
 3. Datos sobre vacunas:
 Los datos sobre vacunas provienen de la compilación realizada por Our World in Data, en este [repositorio](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations) pueden encontrar información sobre la fuente de cada país.
+
+4. Datos sobre personas afectadas en el sector de salud:
+  * Variables: 
+    - `date`: Fecha.
+    - `cases`: Acumulado de casos sospechosos COVID-19 reportados por el Observatorio Ciudadano.
+    - `deaths`: Acumulado de muertes sospechosas COVID-19 reportados por el Observatorio Ciudadano.  
   
 ## Figuras
 
 ```{r, echo = FALSE}
-knitr::include_graphics("figs/cases.png")
+knitr::include_graphics("scrape/plots/cases.png")
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("figs/deaths.png")
+knitr::include_graphics("scrape/plots/deaths.png")
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("figs/heat_map.png")
+knitr::include_graphics("scrape/plots/heat_map.png")
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("figs/accum_weeks.png")
+knitr::include_graphics("scrape/plots/accum_weeks.png")
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("figs/accum_weeks_comp.png")
+knitr::include_graphics("scrape/plots/accum_weeks_comp.png")
 ```
 
 

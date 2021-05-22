@@ -20,6 +20,7 @@ Las siguientes bases de datos se encuentran disponibles en esta
 aplicación:
 
 1.  Observatorio Ciudadad COVID-19:
+
     -   Variables:
         -   `date`: Fecha.
         -   `departamento`: Departamento.
@@ -27,29 +28,41 @@ aplicación:
             por el Observatorio Ciudadano.
         -   `deaths`: Acumulado de muertes sospechosas COVID-19
             reportados por el Observatorio Ciudadano.
+
 2.  Ministerio de Salud de Nicaragua:
+
     -   Variables:
         -   `date`: Fecha.
         -   `cases`: Acumulado de casos confirmados de COVID-19
             reportados por el MINSA.
         -   `deaths`: Acumulado de muertes confirmado de COVID-19
             reportados por el MINSA.
+
 3.  Datos sobre vacunas: Los datos sobre vacunas provienen de la
     compilación realizada por Our World in Data, en este
     [repositorio](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations)
     pueden encontrar información sobre la fuente de cada país.
 
+4.  Datos sobre personas afectadas en el sector de salud:
+
+-   Variables:
+    -   `date`: Fecha.
+    -   `cases`: Acumulado de casos sospechosos COVID-19 reportados por
+        el Observatorio Ciudadano.
+    -   `deaths`: Acumulado de muertes sospechosas COVID-19 reportados
+        por el Observatorio Ciudadano.
+
 ## Figuras
 
-<img src="figs/cases.png" width="5120" />
+<img src="scrape/plots/cases.png" width="5120" />
 
-<img src="figs/deaths.png" width="5120" />
+<img src="scrape/plots/deaths.png" width="5120" />
 
-<img src="figs/heat_map.png" width="5120" />
+<img src="scrape/plots/heat_map.png" width="5120" />
 
-<img src="figs/accum_weeks.png" width="4096" />
+<img src="scrape/plots/accum_weeks.png" width="4096" />
 
-<img src="figs/accum_weeks_comp.png" width="4096" />
+<img src="scrape/plots/accum_weeks_comp.png" width="4096" />
 
 ### Comentarios y sugerencias
 

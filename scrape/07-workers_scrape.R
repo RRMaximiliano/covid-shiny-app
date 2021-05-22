@@ -25,7 +25,7 @@ data <- content$results$result$data$dsr$DS %>% .[[1]] %>%
 	.[[1]] %>% .$C 
 
 # Using purr to get dataset
-df <- map_dfr(data, ~ as_data_frame(t(.))) %>% 
+df <- map_dfr(data, ~ as_tibble(t(.))) %>% 
 	mutate(
 		date = as.POSIXct(V1/1000, origin = "1970-01-01"),
 		date = as_date(date)

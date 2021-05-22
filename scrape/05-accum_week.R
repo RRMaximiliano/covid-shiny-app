@@ -63,39 +63,39 @@ ggsave(here::here("plots", "accum_weeks.png"),
 			 dpi = 320, height = 9, width = 16, scale = 0.8)
 
 
-df <- nacional %>% 
+df <- nacional %>%
 	mutate(
 		week = week(date),
 		week2 = isoweek(date),
 		year = year(date),
 		month = month(date)
-	) %>% 
+	) %>%
 	# filter(year == 2021) %>%
 	mutate(
 		cases2 = cases - lag(cases)
 	)
 
 df_comp <- df %>% 
-	group_by(year, week2) %>% 
+	group_by(year, week) %>% 
 	summarize(
 		sum = sum(cases2, na.rm = TRUE)
 	) %>% 
 	ungroup() %>%
 	mutate(
-		week2 = ifelse(week2 == 53 & year == 2021, NA, week2),
-		week2 = ifelse(week2 == 18 & year == 2021, NA, week2)
+		# week = ifelse(week2 == 53 & year == 2021, NA, week2),
+		week = ifelse(week == 20 & year == 2021, NA, week)
 	) %>%
-	filter(!is.na(week2)) 
+	filter(!is.na(week)) 
 
 df_comp_max <- df_comp %>% 
 	group_by(year) %>% 
 	filter(sum == max(sum))
 
 df_comp %>% 
-	ggplot(aes(x = week2, y = sum, group = year, color = as_factor(year))) +
+	ggplot(aes(x = week, y = sum, group = year, color = as_factor(year))) +
 	geom_vline(xintercept = 12, linetype = "dotdash", color = "grey20") + 
 	geom_line(size = 1.2) +
-	geom_text(data = df_comp_max, aes(label = sum), family = roboto, vjust = -0.5, color = "black") + 
+	geom_text(data = df_comp_max, aes(label = sum), family = roboto, vjust = -0.5, color = "black", check_overlap = TRUE) + 
 	scale_color_manual(values = c("#028482", "#983732")) + 
 	scale_x_continuous(expand = c(0,0)) + 
 	labs(
