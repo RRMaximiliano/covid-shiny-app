@@ -64,6 +64,8 @@ aplicación:
 
 <img src="scrape/plots/accum_weeks_comp.png" width="4096" />
 
+<img src="scrape/plots/vaccines.png" width="4096" />
+
 ### Comentarios y sugerencias
 
 Para realizar comentarios o sugerencias sobre la base de datos puedes
