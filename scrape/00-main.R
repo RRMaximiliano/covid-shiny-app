@@ -11,9 +11,14 @@ library(zoo)
 
 # Run source files --------------------------------------------------------
 
+# scrape
 source("01-covid_scrape.R")
 source("02-covid_scrape_dep.R")
 source("03-covid_scrape_dep_deaths.R")
 source("07-workers_scrape.R")
 
-# End 
+# figures
+source("04-acum_mes.R")
+source("05-accum_week.R")
+source("06-covid_heatmap.R")
+# source("08-vaccines.R")

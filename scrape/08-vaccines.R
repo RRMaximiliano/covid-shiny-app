@@ -62,7 +62,6 @@ vaccines %>%
 		strip.text = element_text(face = "bold")
 	)
 
-
 ggsave(here::here("scrape", "plots", "vaccines.png"),
 			 dpi = 320, height = 9, width = 16, scale = 0.8)
 
