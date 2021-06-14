@@ -23,9 +23,13 @@ content <- jsonlite::fromJSON(content_raw)
 
 # Cleaning data 
 
-data <- content$results$result$data$dsr$DS %>% .[[1]] %>% 
-	.$PH %>% .[[1]] %>% .$DM0 %>% 
-	.[[1]] %>% .$C 
+data <- content$results$result$data$dsr$DS %>% 
+	.[[1]] %>% 
+	.$PH   %>% 
+	.[[1]] %>% 
+	.$DM0  %>% 
+	.[[1]] %>% 
+	.$C 
 
 # Using purr to get dataset
 casos <- map_dfr(data, ~ as.data.frame(t(.))) %>% 

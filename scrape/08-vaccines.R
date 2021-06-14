@@ -12,7 +12,7 @@ library(glue)
 
 # Load df -----------------------------------------------------------------
 
-vaccines <- read_csv(here("data", "vaccines.csv"))
+vaccines <- read_csv(here("scrape", "data", "final","vaccines.csv"))
 
 Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
 roboto = "Roboto Condensed"

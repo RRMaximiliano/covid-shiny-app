@@ -38,25 +38,10 @@ Los datos sobre vacunas provienen de la compilación realizada por Our World in 
 
 ```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/cases.png")
-```
-
-```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/deaths.png")
-```
-
-```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/heat_map.png")
-```
-
-```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/accum_weeks.png")
-```
-
-```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/accum_weeks_comp.png")
-```
-
-```{r, echo = FALSE}
 knitr::include_graphics("scrape/plots/vaccines.png")
 ```
 
