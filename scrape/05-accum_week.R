@@ -41,11 +41,11 @@ df <- nacional %>%
 	)
 
 df %>% 
-	group_by(week) %>% 
+	group_by(week) %>%
 	summarize(
 		sum = sum(cases2, na.rm = TRUE)
 	) %>% 
-	filter(week != 23) %>% 
+	filter(week != 27) %>% 
 	ggplot(aes(x = week, y = sum)) +
 	geom_col(color = "black", fill = "#028482", width = 1) + 
 	geom_text(aes(label = sum), vjust = -0.5, family = roboto) + 
@@ -84,7 +84,7 @@ df_comp <- df %>%
 	ungroup() %>%
 	mutate(
 		# week = ifelse(week2 == 53 & year == 2021, NA, week2),
-		week = ifelse(week == 23 & year == 2021, NA, week)
+		week = ifelse(week == 27 & year == 2021, NA, week)
 	) %>%
 	filter(!is.na(week)) 
 
