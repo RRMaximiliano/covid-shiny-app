@@ -12,7 +12,7 @@ library(glue)
 
 # Load df -----------------------------------------------------------------
 
-vaccines <- read_csv(here("scrape", "data", "final","vaccines.csv"))
+vaccines <- read_csv(here("data", "final","vaccines.csv"))
 
 Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
 roboto = "Roboto Condensed"
@@ -49,19 +49,20 @@ vaccines %>%
 	labs(
 		x = "",
 		y = "Vacunas administradas",
-		title = "<span style = 'color:#00C0B8;'>Honduras</span> y <span style = 'color:#00A5FF;'>Nicaragua</span> presentan muy bajos niveles de vacunación",
-		subtitle = "En las últimas dos semanas, el total de vacunas administradas en Nicaragua apenas creció 0.6%\npasando de 166,350 a 167,500 vacunas administradas",
-		caption = glue("Data: Our World in Data | Plot: @rrmaximiliano | Última actualización: {fecha}")
+		title = "Total de Vacunas administradas",
+		subtitle = "<span style = 'color:#00A5FF;'>Nicaragua</span> es el país que presenta el nivel más bajo de vacunación en la región Centroamericana",
+		# subtitle = "En las últimas dos semanas, el total de vacunas administradas en Nicaragua apenas creció 0.6%\npasando de 166,350 a 167,500 vacunas administradas",
+		caption = glue("Data: Our World in Data | Plot: @rrmaximiliano\nÚltima actualización: {fecha}")
 	) + 
 	theme_ipsum_rc() +
 	theme(
 		legend.position = "none",
-		plot.title = element_markdown(hjust = .5, size = 24, color = "grey40", lineheight = 1.2),
-		plot.subtitle = element_text(hjust = .5, size = 14),
+		plot.title = element_markdown(size = 24, color = "grey40", lineheight = 1.2),
+		plot.subtitle = element_markdown(size = 16, color = "grey40", lineheight = 1.2),
 		plot.caption = element_text(size = 12), 
 		strip.text = element_text(face = "bold")
 	)
 
-ggsave(here::here("scrape", "plots", "vaccines.png"),
+ggsave(here::here("plots", "vaccines.png"),
 			 dpi = 320, height = 9, width = 16, scale = 0.8)
 

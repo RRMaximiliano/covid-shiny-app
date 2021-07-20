@@ -24,7 +24,6 @@ theme_set(theme_ipsum_rc(base_size = 14))
 # Plot --------------------------------------------------------------------
 
 max_date <- max(nacional$date)
-
 format(max_date, "%b %d, %Y")
 
 
@@ -40,12 +39,14 @@ df <- nacional %>%
 		cases2 = cases - lag(cases)
 	)
 
+max_week <- max(df$week)
+
 df %>% 
 	group_by(week) %>%
 	summarize(
 		sum = sum(cases2, na.rm = TRUE)
 	) %>% 
-	filter(week != 27) %>% 
+	filter(week != max_week) %>% 
 	ggplot(aes(x = week, y = sum)) +
 	geom_col(color = "black", fill = "#028482", width = 1) + 
 	geom_text(aes(label = sum), vjust = -0.5, family = roboto) + 
@@ -54,15 +55,20 @@ df %>%
 		x = "Semana", 
 		y = "Número de casos sospechosos por semanas", 
 		title = "Total de casos sospechosos acumulados por semanas en el año 2021 en Nicaragua",
-		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"))
+		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"), "\nPlot: @rrmaximiliano")
 	) +
 	theme(
-		plot.caption = element_text(hjust = 0, size = 12)
+		axis.title.x = element_text(hjust = 0.5, size = 12),
+		axis.title.y = element_text(hjust = 0.5, size = 12),
+		panel.grid.major.x = element_blank(),
+		panel.grid.minor.x = element_blank(), 
+		# plot.title = element_markdown(),
+		legend.position = "none",
+		# legend.title = element_text(family = roboto)
 	)
 
 ggsave(here::here("plots", "accum_weeks.png"),
 			 dpi = 320, height = 9, width = 16, scale = 0.8)
-
 
 df <- nacional %>%
 	mutate(
@@ -84,7 +90,7 @@ df_comp <- df %>%
 	ungroup() %>%
 	mutate(
 		# week = ifelse(week2 == 53 & year == 2021, NA, week2),
-		week = ifelse(week == 27 & year == 2021, NA, week)
+		week = ifelse(week == max_week & year == 2021, NA, week)
 	) %>%
 	filter(!is.na(week)) 
 
@@ -105,12 +111,16 @@ df_comp %>%
 		title = "Total de casos sospechosos por semanas en el año <span style = 'color:#028482;'>2020</span>
 y <span style = 'color:#983732;'>2021</span> de COVID-19 en Nicaragua",
 		subtitle = "La línea punteada indica la semana 12 del año 2020. La cual fue la primera semana con casos sospechosos reportados.", 
-		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua | Plot: @rrmaximiliano \nÚltimo día de actualización: ", format(max_date, "%d-%m-%Y"))
+		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"), "\nPlot: @rrmaximiliano")
 	) +
 	theme(
-		plot.caption = element_text(hjust = 0, size = 12),
+		axis.title.x = element_text(hjust = 0.5, size = 12),
+		axis.title.y = element_text(hjust = 0.5, size = 12),
+		panel.grid.major.x = element_blank(),
+		panel.grid.minor.x = element_blank(), 
 		plot.title = element_markdown(),
-		legend.position = "none"
+		legend.position = "none",
+		# legend.title = element_text(family = roboto)
 	)
 
 ggsave(here::here("plots", "accum_weeks_comp.png"),

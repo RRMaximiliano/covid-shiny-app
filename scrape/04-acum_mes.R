@@ -18,6 +18,11 @@ Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
 roboto = "Roboto Condensed"
 
 ## Cases ----
+
+max_date <- max(df_country$date)
+
+format(max_date, "%b %d, %Y")
+
 df_country %>% 
   mutate(
     cases2 = cases - lag(cases), 
@@ -49,7 +54,7 @@ df_country %>%
       x = "", 
       y = "Casos sospechosos por mes", 
       title = "Casos sospechosos acumulados de coronavirus por mes en Nicaragua",
-      caption = "Datos: Observatorio Ciudadano COVID-19 | Plot: @rrmaximiliano"
+      caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"), "\nPlot: @rrmaximiliano")
     ) +   
   theme_ipsum_rc(base_size = 14) +
   theme(
@@ -97,7 +102,7 @@ df_country %>%
     x = "", 
     y = "Muertes sospechosas por mes", 
     title = "Muertes sospechosas acumuladas de coronavirus por mes en Nicaragua",
-    caption = "Datos: Observatorio Ciudadano COVID-19 | Plot: @rrmaximiliano"
+    caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"), "\nPlot: @rrmaximiliano")
   ) +   
   theme_ipsum_rc(base_size = 14) +
   theme(

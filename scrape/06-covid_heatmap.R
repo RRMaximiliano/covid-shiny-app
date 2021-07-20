@@ -15,8 +15,10 @@ full_df <- read_csv(here("data", "final", "observatorio_nicaragua_dep.csv"))
 roboto = "Roboto Condensed"
 brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03")
 
-
 # Cases -------------------------------------------------------------------
+
+max_date <- max(full_df$date)
+format(max_date, "%b %d, %Y")
 
 cases_df <- full_df %>% 
 	group_by(departamento) %>% 
@@ -124,7 +126,7 @@ patchwork <- p1 + p2
 patchwork + 
 	plot_annotation(
 		title = "Casos y muertes sospechosas de COVID-19 por mes en Nicaragua",
-		caption = "Datos: Observatorio Ciudadano COVID-19, Nicaragua |  Plot: @rrmaximiliano",
+		caption = paste0("Datos: Observatorio Ciudadano COVID-19, Nicaragua\nÚltimo día de actualización: ", format(max_date, "%B %d, %Y"), "\nPlot: @rrmaximiliano"),
 		theme = theme(plot.title = element_text(family = roboto, size = 24, hjust = 0.5, face = "bold"),
 									plot.caption = element_text(family = roboto, size = 16))
 	) 

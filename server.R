@@ -113,6 +113,7 @@ shinyServer(function(input, output, session) {
         
         else if (input$dataset == "country") {
             plot <- df_country %>% 
+                filter(!is.na(cases)) %>% 
                 ggplot(aes(x = date)) + 
                 geom_line(aes_string(y = input$selectedvariable), size = 1.125) +
                 scale_y_continuous(labels = comma) + 
