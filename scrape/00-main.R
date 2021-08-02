@@ -18,6 +18,6 @@ source("07-workers_scrape.R")
 
 # figures
 source("04-acum_mes.R")
-source("05-accum_week.R")
+source("05-accum_week.R") 
 source("06-covid_heatmap.R")
 # source("08-vaccines.R")

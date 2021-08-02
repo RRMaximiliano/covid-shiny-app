@@ -157,6 +157,7 @@ Carazo,2021-07-07,13
 Carazo,2021-07-08,4
 Carazo,2021-07-09,9
 Carazo,2021-07-12,1
+Carazo,2021-07-27,1
 Chinandega,2020-03-20,1
 Chinandega,2020-03-26,2
 Chinandega,2020-03-27,1
@@ -630,6 +631,17 @@ EstelÃ­,2021-07-10,1
 EstelÃ­,2021-07-11,2
 EstelÃ­,2021-07-12,2
 EstelÃ­,2021-07-13,NA
+EstelÃ­,2021-07-14,NA
+EstelÃ­,2021-07-15,1
+EstelÃ­,2021-07-16,3
+EstelÃ­,2021-07-18,5
+EstelÃ­,2021-07-19,2
+EstelÃ­,2021-07-20,1
+EstelÃ­,2021-07-21,22
+EstelÃ­,2021-07-22,3
+EstelÃ­,2021-07-25,6
+EstelÃ­,2021-07-26,1
+EstelÃ­,2021-07-27,2
 Granada,2020-03-18,2
 Granada,2020-04-06,1
 Granada,2020-04-17,5
@@ -765,6 +777,10 @@ Granada,2021-06-30,1
 Granada,2021-07-04,2
 Granada,2021-07-07,2
 Granada,2021-07-09,8
+Granada,2021-07-14,2
+Granada,2021-07-15,1
+Granada,2021-07-20,1
+Granada,2021-07-24,NA
 Jinotega,2020-03-26,1
 Jinotega,2020-04-16,1
 Jinotega,2020-04-17,NA
@@ -935,6 +951,8 @@ Jinotega,2021-07-01,1
 Jinotega,2021-07-04,NA
 Jinotega,2021-07-09,NA
 Jinotega,2021-07-13,2
+Jinotega,2021-07-19,2
+Jinotega,2021-07-25,1
 LeÃ³n,2020-03-23,1
 LeÃ³n,2020-03-25,1
 LeÃ³n,2020-03-28,3
@@ -1211,6 +1229,14 @@ LeÃ³n,2021-07-09,4
 LeÃ³n,2021-07-11,5
 LeÃ³n,2021-07-12,3
 LeÃ³n,2021-07-13,2
+LeÃ³n,2021-07-16,3
+LeÃ³n,2021-07-17,2
+LeÃ³n,2021-07-21,1
+LeÃ³n,2021-07-22,2
+LeÃ³n,2021-07-23,2
+LeÃ³n,2021-07-24,4
+LeÃ³n,2021-07-26,2
+LeÃ³n,2021-07-27,1
 Madriz,2020-03-18,1
 Madriz,2020-03-20,1
 Madriz,2020-04-01,2
@@ -1385,6 +1411,11 @@ Madriz,2021-07-06,37
 Madriz,2021-07-07,2
 Madriz,2021-07-10,4
 Madriz,2021-07-12,1
+Madriz,2021-07-14,1
+Madriz,2021-07-15,10
+Madriz,2021-07-16,5
+Madriz,2021-07-17,4
+Madriz,2021-07-27,2
 Managua,2020-03-18,2
 Managua,2020-03-19,11
 Managua,2020-03-20,6
@@ -1782,6 +1813,20 @@ Managua,2021-07-10,18
 Managua,2021-07-11,12
 Managua,2021-07-12,26
 Managua,2021-07-13,12
+Managua,2021-07-14,21
+Managua,2021-07-15,10
+Managua,2021-07-16,23
+Managua,2021-07-17,1
+Managua,2021-07-18,27
+Managua,2021-07-19,10
+Managua,2021-07-20,1
+Managua,2021-07-21,7
+Managua,2021-07-22,21
+Managua,2021-07-23,14
+Managua,2021-07-24,10
+Managua,2021-07-25,13
+Managua,2021-07-26,75
+Managua,2021-07-27,6
 Masaya,2020-03-18,1
 Masaya,2020-03-20,2
 Masaya,2020-03-23,1
@@ -1956,6 +2001,17 @@ Masaya,2021-07-10,1
 Masaya,2021-07-11,2
 Masaya,2021-07-12,3
 Masaya,2021-07-13,1
+Masaya,2021-07-16,2
+Masaya,2021-07-17,1
+Masaya,2021-07-18,2
+Masaya,2021-07-19,1
+Masaya,2021-07-20,2
+Masaya,2021-07-21,1
+Masaya,2021-07-22,1
+Masaya,2021-07-23,3
+Masaya,2021-07-24,5
+Masaya,2021-07-25,2
+Masaya,2021-07-26,1
 Matagalpa,2020-03-17,1
 Matagalpa,2020-03-22,1
 Matagalpa,2020-03-23,NA
@@ -2202,6 +2258,15 @@ Matagalpa,2021-07-10,2
 Matagalpa,2021-07-11,5
 Matagalpa,2021-07-12,2
 Matagalpa,2021-07-13,17
+Matagalpa,2021-07-15,17
+Matagalpa,2021-07-16,2
+Matagalpa,2021-07-18,1
+Matagalpa,2021-07-19,1
+Matagalpa,2021-07-21,3
+Matagalpa,2021-07-22,1
+Matagalpa,2021-07-23,3
+Matagalpa,2021-07-24,5
+Matagalpa,2021-07-25,22
 Nueva Segovia,2020-03-23,1
 Nueva Segovia,2020-04-02,1
 Nueva Segovia,2020-04-03,3
@@ -2317,6 +2382,16 @@ Nueva Segovia,2021-07-07,NA
 Nueva Segovia,2021-07-08,3
 Nueva Segovia,2021-07-12,5
 Nueva Segovia,2021-07-13,4
+Nueva Segovia,2021-07-14,3
+Nueva Segovia,2021-07-15,3
+Nueva Segovia,2021-07-17,6
+Nueva Segovia,2021-07-18,1
+Nueva Segovia,2021-07-19,2
+Nueva Segovia,2021-07-20,3
+Nueva Segovia,2021-07-21,1
+Nueva Segovia,2021-07-22,2
+Nueva Segovia,2021-07-24,3
+Nueva Segovia,2021-07-26,3
 RACCN,2020-03-18,1
 RACCN,2020-03-24,1
 RACCN,2020-03-30,NA
@@ -2499,6 +2574,7 @@ RACCS,2021-06-25,NA
 RACCS,2021-06-27,NA
 RACCS,2021-06-30,2
 RACCS,2021-07-11,1
+RACCS,2021-07-21,1
 Rio San Juan,2020-04-01,1
 Rio San Juan,2020-04-04,1
 Rio San Juan,2020-05-06,3
@@ -2549,6 +2625,9 @@ Rio San Juan,2021-06-17,5
 Rio San Juan,2021-06-20,2
 Rio San Juan,2021-07-04,1
 Rio San Juan,2021-07-13,7
+Rio San Juan,2021-07-14,6
+Rio San Juan,2021-07-15,1
+Rio San Juan,2021-07-23,1
 Rivas,2020-03-17,1
 Rivas,2020-03-18,2
 Rivas,2020-03-19,1
@@ -2670,3 +2749,7 @@ Rivas,2021-06-30,1
 Rivas,2021-07-08,4
 Rivas,2021-07-10,3
 Rivas,2021-07-12,1
+Rivas,2021-07-15,1
+Rivas,2021-07-16,NA
+Rivas,2021-07-18,NA
+Rivas,2021-07-20,3
