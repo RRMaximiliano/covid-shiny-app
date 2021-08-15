@@ -92,6 +92,11 @@ shinyServer(function(input, output, session) {
             plot <- df %>% 
                 filter(!is.na(cases)) %>% 
                 filter(departamento %in% input$dep) %>%
+                group_by(departamento) %>% 
+                mutate(
+                    cases = cumsum(cases),
+                ) %>% 
+                ungroup() %>% 
                 ggplot(aes(x = date, group = 1, color = departamento)) + 
                 geom_line(aes_string(y = input$selectedvariable), size = 1.125) +
                 scale_y_continuous(labels = comma) +
@@ -160,18 +165,12 @@ shinyServer(function(input, output, session) {
         if (input$dataset == "state"){
             
             plot <- df %>% 
-                group_by(departamento) %>% 
                 mutate(
-                    cases2 = cases - lag(cases), 
-                    deaths2 = deaths - lag(deaths)
-                ) %>% 
-                mutate(
-                    cases2 = ifelse(date == "2020-03-18", cases, cases2),
+                    deaths2 = deaths - lag(deaths), 
                     deaths2 = ifelse(date == "2020-03-18", deaths, deaths2)
                 ) %>% 
-                select(date, departamento, cases2, deaths2) %>% 
-                rename(cases = cases2, deaths = deaths2) %>% 
-                ungroup() %>% 
+                select(-deaths) %>% 
+                rename(deaths = deaths2) %>% 
                 filter(departamento %in% input$dep) %>%
                 ggplot(aes(x = date, group = departamento, fill = departamento)) + 
                 geom_bar(aes_string(y = input$selectedvariable), 
