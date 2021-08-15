@@ -64,5 +64,5 @@ vaccines %>%
 	)
 
 ggsave(here::here("plots", "vaccines.png"),
-			 dpi = 320, height = 9, width = 16, scale = 0.8)
+			 dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
 

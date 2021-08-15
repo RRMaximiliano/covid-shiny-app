@@ -8,6 +8,10 @@ library(scales)
 library(patchwork)
 library(here)
 
+## Local time
+
+Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
+
 # Load data ---------------------------------------------------------------
 
 full_df <- read_csv(here("data", "final", "observatorio_nicaragua_dep.csv"))
@@ -132,4 +136,5 @@ patchwork +
 	) 
 
 ggsave(here("plots", "heat_map.png"),
-			 dpi = 320, height = 10, width = 20, scale = 0.8)
+			 dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
+

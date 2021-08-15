@@ -68,7 +68,7 @@ df_country %>%
   )
 
 ggsave(here("plots", "cases.png"),
-       dpi = 320, height = 10, width = 20, scale = 0.8)
+       dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
 
 ## Deaths ----
 df_country %>% 
@@ -89,7 +89,7 @@ df_country %>%
     sum_cases = sum(cases2, na.rm = TRUE),
     sum_deaths = sum(deaths2, na.rm = TRUE)
   ) %>% 
-  ggplot(aes(x = floor, y = sum_deaths, fill = ifelse(floor > "2021-01-01", TRUE, FALSE))) +
+  ggplot(aes(x = floor, y = sum_deaths, fill = ifelse(floor >= "2021-01-01", TRUE, FALSE))) +
   geom_col(color = "black") + 
   geom_text(aes(label = format(sum_deaths, big.mark = ",", scientific = FALSE)), 
             position = position_dodge(width = 0.9), 
@@ -116,5 +116,5 @@ df_country %>%
   )
 
 ggsave(here("plots", "deaths.png"),
-       dpi = 320, height = 10, width = 20, scale = 0.8)
+       dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
 

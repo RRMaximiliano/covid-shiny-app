@@ -68,7 +68,7 @@ df %>%
 	)
 
 ggsave(here::here("plots", "accum_weeks.png"),
-			 dpi = 320, height = 9, width = 16, scale = 0.8)
+			 dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
 
 df <- nacional %>%
 	mutate(
@@ -124,5 +124,5 @@ y <span style = 'color:#983732;'>2021</span> de COVID-19 en Nicaragua",
 	)
 
 ggsave(here::here("plots", "accum_weeks_comp.png"),
-			 dpi = 320, height = 9, width = 16, scale = 0.8)
+			 dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
 	
