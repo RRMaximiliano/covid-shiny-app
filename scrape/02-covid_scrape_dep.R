@@ -60,10 +60,10 @@ df <- df %>%
 			id == 2 ~ "Carazo",
 			id == 3 ~ "Chinandega",
 			id == 4 ~ "Chontales",
-			id == 5 ~ "Estelí",
+			id == 5 ~ "Esteli",
 			id == 6 ~ "Granada",
 			id == 7 ~ "Jinotega",
-			id == 8 ~ "León",
+			id == 8 ~ "Leon",
 			id == 9 ~ "Madriz",
 			id == 10 ~ "Managua",
 			id == 11 ~ "Masaya",
@@ -79,7 +79,8 @@ df <- df %>%
 	group_by(departamento) %>% 
 	mutate(
 		cases = ifelse(is.na(cases), lag(cases), cases)
-	)
+	) %>% 
+	filter(!is.na(cases))
 
 df %>% 
 	write_csv(here("data", "final", "observatorio_nicaragua_dep_cases.csv")) 

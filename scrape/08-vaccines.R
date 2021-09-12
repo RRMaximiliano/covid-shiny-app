@@ -49,7 +49,7 @@ vaccines %>%
 	labs(
 		x = "",
 		y = "Vacunas administradas",
-		title = "Total de Vacunas administradas",
+		title = "Total de vacunas administradas",
 		subtitle = "<span style = 'color:#00A5FF;'>Nicaragua</span> es el país que presenta el nivel más bajo de vacunación en la región Centroamericana",
 		# subtitle = "En las últimas dos semanas, el total de vacunas administradas en Nicaragua apenas creció 0.6%\npasando de 166,350 a 167,500 vacunas administradas",
 		caption = glue("Data: Our World in Data | Plot: @rrmaximiliano\nÚltima actualización: {fecha}")
@@ -64,5 +64,5 @@ vaccines %>%
 	)
 
 ggsave(here::here("plots", "vaccines.png"),
-			 dpi = 320, height = 10, width = 20, scale = 0.8, bg = "white")
+			 dpi = 320, height = 10, width = 20, scale = 0.7, bg = "white")
 

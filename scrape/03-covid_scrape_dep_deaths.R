@@ -62,10 +62,10 @@ muertes <- muertes %>%
 			id == 2 ~ "Carazo",
 			id == 3 ~ "Chinandega",
 			id == 4 ~ "Chontales",
-			id == 5 ~ "Estelí",
+			id == 5 ~ "Esteli",
 			id == 6 ~ "Granada",
 			id == 7 ~ "Jinotega",
-			id == 8 ~ "León",
+			id == 8 ~ "Leon",
 			id == 9 ~ "Madriz",
 			id == 10 ~ "Managua",
 			id == 11 ~ "Masaya",
@@ -77,7 +77,8 @@ muertes <- muertes %>%
 			id == 17 ~ "Rivas",		
 		)
 	) %>% 
-	select(departamento, date, deaths = V2)
+	select(departamento, date, deaths = V2) %>% 
+	filter(!is.na(deaths))
 
 muertes %>% 
 	write_csv(here("data", "final", "observatorio_nicaragua_dep_deaths.csv")) 
@@ -105,3 +106,4 @@ full_df %>%
 
 full_df %>% 
 	write_rds(here("data", "final", "observatorio_nicaragua_dep.Rds")) 
+

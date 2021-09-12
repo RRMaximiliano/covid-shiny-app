@@ -165,6 +165,7 @@ shinyServer(function(input, output, session) {
         if (input$dataset == "state"){
             
             plot <- df %>% 
+                group_by(departamento) %>% 
                 mutate(
                     deaths2 = deaths - lag(deaths), 
                     deaths2 = ifelse(date == "2020-03-18", deaths, deaths2)

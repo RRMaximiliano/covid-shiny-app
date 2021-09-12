@@ -41,7 +41,7 @@ casos <- map_dfr(data, ~ as.data.frame(t(.))) %>%
 	select(date, acumulado, casos) %>% 
 	as_tibble()
 
-	# Save dataset 
+# Save dataset 
 
 casos %>% 
 	write_csv(here("data", "final", "covid_cases_nic.csv")) 
@@ -77,6 +77,14 @@ deaths <- map_dfr(data, ~ as.data.frame(t(.))) %>%
 
 # Save dataset
 
+deaths <- deaths %>% 
+	mutate(
+		muertes2 = acumulado - lag(acumulado),
+		muertes2 = if_else(date == "2020-03-21", acumulado, muertes2)
+	) %>% 
+	select(date, acumulado, muertes2) %>% 
+	rename(muertes = muertes2)
+	
 deaths %>% 
 	write_csv(here("data", "final", "covid_deaths_nic.csv")) 
 
@@ -90,7 +98,6 @@ df <- casos %>%
 	left_join(deaths %>% select(date, deaths = acumulado), by = "date") %>% 
 	mutate(deaths = na.locf(deaths, na.rm = FALSE),
 				 deaths = ifelse(is.na(deaths), 0, deaths)) 
-
 
 # Save dataset ------------------------------------------------------------
 

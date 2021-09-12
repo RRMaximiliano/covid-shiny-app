@@ -9,7 +9,6 @@ library(scales)
 library(ggtext)
 library(here)
 
-
 # Load df -----------------------------------------------------------------
 
 df_country <- read_csv(here("data", "final", "observatorio_nicaragua.csv"))

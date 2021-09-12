@@ -8,13 +8,9 @@ library(scales)
 library(patchwork)
 library(here)
 
-## Local time
-
-Sys.setlocale("LC_TIME", "Spanish_Spain.1252")
-
 # Load data ---------------------------------------------------------------
 
-full_df <- read_csv(here("data", "final", "observatorio_nicaragua_dep.csv"))
+full_df <- read_rds(here("data", "final", "observatorio_nicaragua_dep.Rds"))
 
 roboto = "Roboto Condensed"
 brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03")
