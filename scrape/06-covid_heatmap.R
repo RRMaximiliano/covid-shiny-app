@@ -22,15 +22,14 @@ format(max_date, "%b %d, %Y")
 
 cases_df <- full_df %>% 
 	group_by(departamento) %>% 
+	arrange(departamento, date) %>% 
 	mutate(
 		departamento = as_factor(departamento),
-		cases2 = cases - lag(cases),
-		cases2 = ifelse(row_number()==1, cases, cases2),
 		year_month = lubridate::floor_date(date, "month"), 
 		year_month = format(year_month, format("%Y-%m"))
 	) %>% 
 	ungroup() %>% 
-	select(year_month, departamento, cases = cases2) %>%
+	select(year_month, departamento, cases) %>%
 	group_by(year_month, departamento) %>% 
 	summarize(
 		cases = sum(cases),
@@ -64,7 +63,7 @@ deaths_df <- full_df %>%
 
 # Plots -------------------------------------------------------------------
 
-p1 <- cases_df %>% 
+ p1 <- cases_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = cases)) +
 	geom_tile() + 
 	scale_x_discrete(breaks = brks, guide = guide_axis(check.overlap = TRUE)) + 
