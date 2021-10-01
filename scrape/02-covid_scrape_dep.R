@@ -38,7 +38,7 @@ postfunction <- function(sym) {
 	
 	df <- map_dfr(data, ~ as.data.frame(t(.))) %>% 
 		mutate(
-			date = as.POSIXct(V1/1000, origin="1970-01-01"),
+			date = as.POSIXct(V1/1000, origin="1970-01-02"),
 			date = as_date(date),
 		) %>% 
 		select(date, cases = V2) %>% 

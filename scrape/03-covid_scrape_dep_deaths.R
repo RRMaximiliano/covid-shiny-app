@@ -51,7 +51,7 @@ muertes <- bind_rows(muertes, .id = "id")
 muertes <- muertes %>% 
 	group_by(id) %>% 
 	mutate(
-		date = as.POSIXct(V1/1000, origin="1970-01-01"),
+		date = as.POSIXct(V1/1000, origin="1970-01-02"),
 		date = as_date(date), 
 		V2 = na.locf(V2, na.rm = FALSE)
 	) %>% 

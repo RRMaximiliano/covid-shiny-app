@@ -79,7 +79,7 @@ df <- nacional %>%
 		month = month(date),
 		yday = yday(date),
 		cases2 = cases - lag(cases),
-		cases2 = if_else(date == "2020-03-17", cases, cases2)
+		cases2 = if_else(date == "2020-03-18", cases, cases2)
 	)
 
 df_comp <- df %>% 

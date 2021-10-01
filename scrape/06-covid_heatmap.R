@@ -13,7 +13,12 @@ library(here)
 full_df <- read_rds(here("data", "final", "observatorio_nicaragua_dep.Rds"))
 
 roboto = "Roboto Condensed"
-brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03")
+brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03", "2021-05", "2021-07", "2021-09")
+
+months <- tibble(
+	brks = c("2020-03", "2020-05", "2020-07", "2020-09", "2020-11", "2021-01", "2021-03", "2021-05", "2021-07", "2021-09"),
+	label = c("20'03", "05", "07", "09", "11", "21'01", "03","05", "07", "09")
+)
 
 # Cases -------------------------------------------------------------------
 
@@ -32,12 +37,8 @@ cases_df <- full_df %>%
 	select(year_month, departamento, cases) %>%
 	group_by(year_month, departamento) %>% 
 	summarize(
-		cases = sum(cases),
-	) %>% 
-	mutate(
-		cases = ifelse(cases == 0, NA, cases)
-	)
-
+		cases = sum(cases)
+	) 
 
 # Deaths ------------------------------------------------------------------
 
@@ -54,19 +55,15 @@ deaths_df <- full_df %>%
 	select(year_month, departamento, deaths = deaths2) %>%
 	group_by(year_month, departamento) %>% 
 	summarize(
-		deaths = sum(deaths),
-	) %>% 
-	mutate(
-		deaths = ifelse(deaths == 0, NA, deaths)
-	)
-
+		deaths = sum(deaths)
+	) 
 
 # Plots -------------------------------------------------------------------
 
  p1 <- cases_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = cases)) +
 	geom_tile() + 
-	scale_x_discrete(breaks = brks, guide = guide_axis(check.overlap = TRUE)) + 
+	scale_x_discrete(breaks = brks, labels = months$label, guide = guide_axis(check.overlap = TRUE)) + 
 	scale_y_discrete(limits = rev) +
 	scale_fill_viridis_c(option = "magma", direction = -1, trans = "sqrt", na.value="white", labels = comma) +
 	coord_cartesian(expand = FALSE) +
@@ -93,7 +90,7 @@ deaths_df <- full_df %>%
 p2 <- deaths_df %>% 
 	ggplot(aes(x = as.factor(year_month), y = departamento, fill = deaths)) +
 	geom_tile() + 
-	scale_x_discrete(breaks = brks, guide = guide_axis(check.overlap = TRUE)) + 
+	scale_x_discrete(breaks = brks, labels = months$label, guide = guide_axis(check.overlap = TRUE)) +  
 	scale_y_discrete(limits = rev) +
 	scale_fill_viridis_c(option = "magma", direction = -1, trans = "sqrt", na.value = "white") +
 	coord_cartesian(expand = FALSE) +
