@@ -50,7 +50,7 @@ df %>%
 	filter(week != max_week) %>% 
 	ggplot(aes(x = week, y = sum)) +
 	geom_col(color = "black", fill = "#028482", width = 1) + 
-	geom_text(aes(label = sum), vjust = -0.5, family = roboto) + 
+	# geom_text(aes(label = sum), vjust = -0.5, family = roboto) + 
 	scale_x_continuous(expand = c(0,0)) + 
 	labs(
 		x = "Semana", 
@@ -130,7 +130,7 @@ y <span style = 'color:#983732;'>2021</span> en Nicaragua",
 	theme(
 		plot.title = element_markdown(size = rel(2)),
 		plot.subtitle = element_markdown(size = rel(1.3), margin = margin(0,0,30,0)),
-		plot.caption = element_text(size = rel(1.2), hjust = 0),
+		plot.caption = element_text(size = rel(1.2), hjust = 1),
 		axis.line.x = element_line(color = "black"),
 		axis.line.y = element_blank(),
 		axis.text.x = element_text(size = rel(1.1), vjust = -1, family = jetbrains, color = "black"),

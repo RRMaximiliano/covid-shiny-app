@@ -54,7 +54,7 @@ aplicación:
 
 ## Figuras
 
-<img src="scrape/plots/cases.png" width="5120" /><img src="scrape/plots/deaths.png" width="5120" /><img src="scrape/plots/heat_map.png" width="5120" /><img src="scrape/plots/accum_weeks.png" width="5120" /><img src="scrape/plots/accum_weeks_comp.png" width="5120" /><img src="scrape/plots/vaccines.png" width="4480" />
+<img src="scrape/plots/cases.png" width="5120" /><img src="scrape/plots/deaths.png" width="5120" /><img src="scrape/plots/heat_map.png" width="5120" /><img src="scrape/plots/accum_weeks.png" width="5120" /><img src="scrape/plots/accum_weeks_comp.png" width="5120" /><img src="scrape/plots/vaccines.png" width="4480" /><img src="scrape/plots/vaccines_totals.png" width="4480" /><img src="scrape/plots/casos_minsa.png" width="4480" />
 
 ### Comentarios y sugerencias
 

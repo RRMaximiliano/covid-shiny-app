@@ -4,8 +4,9 @@ library(scales)
 library(ggtext)
 library(glue)
 library(lubridate)
+library(here)
 
-minsa <- read_csv("data/final/minsa.csv")
+minsa <- read_csv(here("data", "final","minsa.csv"))
 fecha <- max(minsa$date)
 
 minsa %>% 
@@ -38,12 +39,8 @@ minsa %>%
 ggsave(here::here("plots", "deaths_minsa.png"),
 		 dpi = 320, height = 10, width = 20, scale = 0.7, bg = "white")
 
-
-
 # Cases -------------------------------------------------------------------
-library(ggtext)
 
-minsa <- read_csv("scrape/data/final/minsa.csv")
 fecha <- max(minsa$date)
 
 months <- tibble(yday = c(1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335),
@@ -62,7 +59,7 @@ minsa %>%
 		cases2 = ifelse(date == "2021-01-01", 0, cases2)
 	) %>%
 	ungroup() %>% 
-	filter(cases2 != 0) %>% view()
+	filter(cases2 != 0) %>% 
 	ggplot(
 		aes(x = yday, y = cases2, color = year, fill = year)
 	) +
@@ -80,6 +77,7 @@ minsa %>%
 		title = "Casos diarios confirmados de COVID-19 en Nicaragua en el año <span style = 'color:#0072B2;'>2020</span> y <span style = 'color:#D55E00;'>2021</span>",
 		caption = glue("Datos: Ministerio de Salud de Nicaragua | Plot: @rrmaximiliano\nÚltima actualización: {fecha}")
 	) + 
+	theme_ipsum_rc() +
 	theme(
 		legend.position = "",
 		plot.title = element_markdown(size = rel(1.35)),

@@ -67,6 +67,9 @@ Boaco,2021-09-15,1
 Boaco,2021-09-16,2
 Boaco,2021-09-19,2
 Boaco,2021-09-21,6
+Boaco,2021-09-24,1
+Boaco,2021-09-27,1
+Boaco,2021-09-28,2
 Carazo,2020-03-22,1
 Carazo,2020-04-27,1
 Carazo,2020-04-29,5
@@ -164,7 +167,7 @@ Carazo,2021-08-20,1
 Carazo,2021-09-04,5
 Carazo,2021-09-05,4
 Carazo,2021-09-06,1
-Carazo,2021-09-08,1
+Carazo,2021-09-08,2
 Carazo,2021-09-09,3
 Carazo,2021-09-10,1
 Carazo,2021-09-12,2
@@ -175,6 +178,13 @@ Carazo,2021-09-17,1
 Carazo,2021-09-20,3
 Carazo,2021-09-21,2
 Carazo,2021-09-22,2
+Carazo,2021-09-23,5
+Carazo,2021-09-24,4
+Carazo,2021-09-25,2
+Carazo,2021-09-26,2
+Carazo,2021-09-27,3
+Carazo,2021-09-28,6
+Carazo,2021-09-29,3
 Chinandega,2020-03-18,1
 Chinandega,2020-03-21,1
 Chinandega,2020-03-27,2
@@ -337,6 +347,7 @@ Chinandega,2021-09-19,3
 Chinandega,2021-09-20,19
 Chinandega,2021-09-21,1
 Chinandega,2021-09-22,1
+Chinandega,2021-09-28,3
 Chontales,2020-03-25,3
 Chontales,2020-03-31,2
 Chontales,2020-04-06,1
@@ -480,6 +491,13 @@ Chontales,2021-09-19,7
 Chontales,2021-09-20,2
 Chontales,2021-09-21,24
 Chontales,2021-09-22,6
+Chontales,2021-09-23,5
+Chontales,2021-09-24,8
+Chontales,2021-09-25,1
+Chontales,2021-09-26,6
+Chontales,2021-09-27,1
+Chontales,2021-09-28,4
+Chontales,2021-09-29,6
 Esteli,2020-03-19,8
 Esteli,2020-03-20,4
 Esteli,2020-03-24,1
@@ -739,6 +757,11 @@ Esteli,2021-09-19,3
 Esteli,2021-09-20,30
 Esteli,2021-09-21,26
 Esteli,2021-09-22,17
+Esteli,2021-09-23,15
+Esteli,2021-09-25,2
+Esteli,2021-09-26,19
+Esteli,2021-09-27,12
+Esteli,2021-09-29,7
 Granada,2020-03-19,2
 Granada,2020-04-07,1
 Granada,2020-04-18,6
@@ -868,14 +891,17 @@ Granada,2021-09-01,7
 Granada,2021-09-03,1
 Granada,2021-09-05,13
 Granada,2021-09-06,1
+Granada,2021-09-07,5
 Granada,2021-09-08,2
 Granada,2021-09-10,3
 Granada,2021-09-12,4
 Granada,2021-09-14,64
 Granada,2021-09-15,1
-Granada,2021-09-16,57
+Granada,2021-09-16,58
 Granada,2021-09-17,2
 Granada,2021-09-20,2
+Granada,2021-09-26,5
+Granada,2021-09-29,2
 Jinotega,2020-03-27,1
 Jinotega,2020-04-17,1
 Jinotega,2020-05-03,2
@@ -1061,6 +1087,12 @@ Jinotega,2021-09-15,3
 Jinotega,2021-09-16,42
 Jinotega,2021-09-17,3
 Jinotega,2021-09-20,7
+Jinotega,2021-09-23,3
+Jinotega,2021-09-24,14
+Jinotega,2021-09-25,3
+Jinotega,2021-09-26,3
+Jinotega,2021-09-28,1
+Jinotega,2021-09-29,2
 Leon,2020-03-24,1
 Leon,2020-03-26,1
 Leon,2020-03-29,3
@@ -1361,7 +1393,7 @@ Leon,2021-09-06,30
 Leon,2021-09-07,26
 Leon,2021-09-08,16
 Leon,2021-09-09,8
-Leon,2021-09-10,10
+Leon,2021-09-10,11
 Leon,2021-09-11,7
 Leon,2021-09-12,3
 Leon,2021-09-13,9
@@ -1374,6 +1406,13 @@ Leon,2021-09-19,14
 Leon,2021-09-20,39
 Leon,2021-09-21,10
 Leon,2021-09-22,10
+Leon,2021-09-23,12
+Leon,2021-09-24,8
+Leon,2021-09-25,1
+Leon,2021-09-26,2
+Leon,2021-09-27,1
+Leon,2021-09-28,9
+Leon,2021-09-29,1
 Madriz,2020-03-19,1
 Madriz,2020-03-21,1
 Madriz,2020-04-02,2
@@ -1588,6 +1627,11 @@ Madriz,2021-09-17,40
 Madriz,2021-09-18,22
 Madriz,2021-09-20,1
 Madriz,2021-09-21,373
+Madriz,2021-09-22,12
+Madriz,2021-09-23,121
+Madriz,2021-09-25,152
+Madriz,2021-09-26,95
+Madriz,2021-09-27,127
 Managua,2020-03-19,2
 Managua,2020-03-20,12
 Managua,2020-03-21,6
@@ -2038,21 +2082,28 @@ Managua,2021-09-04,18
 Managua,2021-09-05,51
 Managua,2021-09-06,99
 Managua,2021-09-07,117
-Managua,2021-09-08,140
+Managua,2021-09-08,141
 Managua,2021-09-09,60
-Managua,2021-09-10,52
+Managua,2021-09-10,54
 Managua,2021-09-11,13
-Managua,2021-09-12,47
-Managua,2021-09-13,48
-Managua,2021-09-14,28
-Managua,2021-09-15,42
-Managua,2021-09-16,40
-Managua,2021-09-17,12
-Managua,2021-09-18,61
-Managua,2021-09-19,36
-Managua,2021-09-20,60
-Managua,2021-09-21,32
-Managua,2021-09-22,36
+Managua,2021-09-12,48
+Managua,2021-09-13,51
+Managua,2021-09-14,29
+Managua,2021-09-15,48
+Managua,2021-09-16,54
+Managua,2021-09-17,25
+Managua,2021-09-18,77
+Managua,2021-09-19,51
+Managua,2021-09-20,81
+Managua,2021-09-21,43
+Managua,2021-09-22,44
+Managua,2021-09-23,25
+Managua,2021-09-24,24
+Managua,2021-09-25,26
+Managua,2021-09-26,18
+Managua,2021-09-27,26
+Managua,2021-09-28,36
+Managua,2021-09-29,77
 Masaya,2020-03-19,1
 Masaya,2020-03-21,2
 Masaya,2020-03-24,1
@@ -2255,7 +2306,7 @@ Masaya,2021-09-09,6
 Masaya,2021-09-10,2
 Masaya,2021-09-12,9
 Masaya,2021-09-13,2
-Masaya,2021-09-14,2
+Masaya,2021-09-14,3
 Masaya,2021-09-15,11
 Masaya,2021-09-16,7
 Masaya,2021-09-17,16
@@ -2264,6 +2315,12 @@ Masaya,2021-09-19,1
 Masaya,2021-09-20,6
 Masaya,2021-09-21,10
 Masaya,2021-09-22,3
+Masaya,2021-09-24,15
+Masaya,2021-09-25,3
+Masaya,2021-09-26,17
+Masaya,2021-09-27,6
+Masaya,2021-09-28,10
+Masaya,2021-09-29,4
 Matagalpa,2020-03-18,1
 Matagalpa,2020-03-23,1
 Matagalpa,2020-03-29,2
@@ -2565,6 +2622,13 @@ Matagalpa,2021-09-19,61
 Matagalpa,2021-09-20,14
 Matagalpa,2021-09-21,9
 Matagalpa,2021-09-22,13
+Matagalpa,2021-09-23,13
+Matagalpa,2021-09-24,12
+Matagalpa,2021-09-25,2
+Matagalpa,2021-09-26,10
+Matagalpa,2021-09-27,9
+Matagalpa,2021-09-28,7
+Matagalpa,2021-09-29,16
 Nueva Segovia,2020-03-24,1
 Nueva Segovia,2020-04-03,1
 Nueva Segovia,2020-04-04,3
@@ -2725,6 +2789,8 @@ Nueva Segovia,2021-09-18,1
 Nueva Segovia,2021-09-20,1
 Nueva Segovia,2021-09-21,2
 Nueva Segovia,2021-09-22,2
+Nueva Segovia,2021-09-23,3
+Nueva Segovia,2021-09-29,1
 RACCN,2020-03-19,1
 RACCN,2020-03-25,1
 RACCN,2020-04-25,2
@@ -2823,6 +2889,9 @@ RACCN,2021-09-15,4
 RACCN,2021-09-16,2
 RACCN,2021-09-19,1
 RACCN,2021-09-21,1
+RACCN,2021-09-25,12
+RACCN,2021-09-26,1
+RACCN,2021-09-27,4
 RACCS,2020-03-27,2
 RACCS,2020-03-31,1
 RACCS,2020-04-04,14
@@ -2926,6 +2995,9 @@ RACCS,2021-09-15,1
 RACCS,2021-09-16,6
 RACCS,2021-09-17,5
 RACCS,2021-09-20,1
+RACCS,2021-09-24,1
+RACCS,2021-09-26,2
+RACCS,2021-09-28,1
 Rio San Juan,2020-04-02,1
 Rio San Juan,2020-04-05,1
 Rio San Juan,2020-05-07,3
@@ -2983,6 +3055,7 @@ Rio San Juan,2021-08-15,2
 Rio San Juan,2021-08-20,15
 Rio San Juan,2021-08-29,1
 Rio San Juan,2021-08-31,1
+Rio San Juan,2021-09-28,3
 Rivas,2020-03-18,1
 Rivas,2020-03-19,2
 Rivas,2020-03-20,1
@@ -3109,3 +3182,9 @@ Rivas,2021-09-18,10
 Rivas,2021-09-19,3
 Rivas,2021-09-20,3
 Rivas,2021-09-22,1
+Rivas,2021-09-23,3
+Rivas,2021-09-24,2
+Rivas,2021-09-25,7
+Rivas,2021-09-26,1
+Rivas,2021-09-27,1
+Rivas,2021-09-29,2

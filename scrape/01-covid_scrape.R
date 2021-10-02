@@ -32,6 +32,40 @@ data <- content$results$result$data$dsr$DS %>%
 
 # Using purr to get dataset
 
+casos_plus_minsa <- map_dfr(data, ~ as.data.frame(t(.))) %>%
+	mutate(
+		date = as.POSIXct(V1/1000, origin="1970-01-02"),
+		date = as_date(date)
+	) %>% 
+	rename(acumulado = V2, casos = V3) %>% 
+	select(date, acumulado, casos) %>% 
+	as_tibble()
+
+casos_plus_minsa %>% 
+	write_csv(here("data", "final", "covid_cases_nic_all.csv")) 
+
+casos_plus_minsa %>% 
+	write_rds(here("data", "final", "covid_cases_nic_allRds")) 
+
+
+# -------------------------------------------------------------------------
+
+# Only casos del observatorio
+
+query_obs <- readLines(here("query", "cases_obs.txt"))
+
+content_raw <- httr::POST(url, body = query_obs, encode = "json", httr::add_headers(`X-PowerBI-ResourceKey` = "46a60415-b4e9-4b80-acf2-90a4cee42736", `Content-Type` = "application/json")) %>% content(as = 'text')
+
+content <- jsonlite::fromJSON(content_raw) 
+
+data <- content$results$result$data$dsr$DS %>% 
+	.[[1]] %>% 
+	.$PH   %>% 
+	.[[1]] %>% 
+	.$DM0  %>% 
+	.[[1]] %>% 
+	.$C 
+
 casos <- map_dfr(data, ~ as.data.frame(t(.))) %>%
 	mutate(
 		date = as.POSIXct(V1/1000, origin="1970-01-02"),
@@ -40,6 +74,7 @@ casos <- map_dfr(data, ~ as.data.frame(t(.))) %>%
 	rename(acumulado = V2, casos = V3) %>% 
 	select(date, acumulado, casos) %>% 
 	as_tibble()
+
 
 # Save dataset 
 
