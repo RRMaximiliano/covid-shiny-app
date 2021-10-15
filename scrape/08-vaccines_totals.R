@@ -66,7 +66,7 @@ df_plot %>%
 		family = jetbrains,
 		show.legend = FALSE
 	) +
-	scale_y_continuous(labels = scales::label_number_si(), position = "right", limits = c(0, 8000000)) + 
+	scale_y_continuous(labels = scales::label_number_si(), position = "right", limits = c(0, 10000000)) + 
 	scale_x_date(breaks = date_breaks("months"), labels = date_format("%b")) + 
 	scale_color_manual(values = c("#E69F00", "#56B4E9", "#009E73")) + 
 	coord_cartesian(clip = "off", expand = FALSE) + 

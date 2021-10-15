@@ -52,6 +52,7 @@ df %>%
 	geom_col(color = "black", fill = "#028482", width = 1) + 
 	# geom_text(aes(label = sum), vjust = -0.5, family = roboto) + 
 	scale_x_continuous(expand = c(0,0)) + 
+	scale_y_continuous(labels = scales::comma) + 
 	labs(
 		x = "Semana", 
 		y = "Número de casos sospechosos por semanas", 

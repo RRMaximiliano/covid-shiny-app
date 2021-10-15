@@ -45,7 +45,7 @@ casos_plus_minsa %>%
 	write_csv(here("data", "final", "covid_cases_nic_all.csv")) 
 
 casos_plus_minsa %>% 
-	write_rds(here("data", "final", "covid_cases_nic_allRds")) 
+	write_rds(here("data", "final", "covid_cases_nic_all.rds")) 
 
 
 # -------------------------------------------------------------------------
