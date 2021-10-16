@@ -60,18 +60,16 @@ minsa %>%
 		cases2 = ifelse(date == "2021-01-01", 0, cases2)
 	) %>%
 	ungroup() %>% 
-	filter(cases2 != 0) %>% 
+	filter(cases2 != 0) %>%  
 	ggplot(
 		aes(x = yday, y = cases2, color = year, fill = year)
 	) +
-	# geom_point() + 
-	# geom_col() +
-	geom_col(width = 4, position = position_dodge2(padding = 0.5, preserve = "single")) +
-	scale_x_continuous(breaks = months$yday, labels = months$label) +
-	scale_y_continuous(limits = c(0,600)) + 
+	geom_col(width = 4, position = position_dodge2(padding = 0.5, preserve = "single")) + 
+	scale_x_continuous(breaks = months$yday, labels = months$label)  + 
+	scale_y_continuous(limits = c(0, 800)) + 
 	scale_color_manual(values = c("#0072B2", "#D55E00")) + 
 	scale_fill_manual(values = c("#0072B2", "#D55E00")) + 
-	# facet_wrap(~ year)
+	# facet_wrap(~ year) + 
 	labs(
 		x = "", 
 		y = "Casos confirmados",
@@ -85,5 +83,5 @@ minsa %>%
 		plot.caption = element_text(size = rel(0.95))
 	)
 
-ggsave(here::here("scrape", "plots", "casos_minsa.png"),
+ggsave(here::here("plots", "casos_minsa.png"),
 			 dpi = 320, height = 10, width = 20, scale = 0.7, bg = "white")

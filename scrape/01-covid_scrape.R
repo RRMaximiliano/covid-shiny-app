@@ -135,6 +135,7 @@ df <- casos %>%
 	select(date, cases = acumulado) %>% 
 	left_join(deaths %>% select(date, deaths = acumulado), by = "date") %>% 
 	mutate(
+		cases  = na.locf(cases, na.rm = FALSE),
 		deaths = na.locf(deaths, na.rm = FALSE),
 		deaths = ifelse(is.na(deaths), 0, deaths)
 	) 

@@ -86,7 +86,6 @@ muertes %>%
 muertes %>% 
 	write_rds(here("data", "final", "observatorio_nicaragua_dep_deaths.Rds")) 
 
-
 # Merge with cases to get full dep data -----------------------------------
 
 # Merge with cases

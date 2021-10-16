@@ -344,7 +344,7 @@ shinyServer(function(input, output, session) {
         	geom_point(alpha = 0.6, aes_string(y = input$selectedvariable_vaccines)) +
         	scale_y_continuous(labels = comma) +
         	scale_color_viridis_d(option = "turbo") +
-        	scale_x_date(breaks = date_breaks("1 months"), labels = date_format("%m/%Y")) +
+        	scale_x_date(breaks = date_breaks("2 months"), labels = date_format("%m/%Y")) +
         	labs(
         		y = y_label_vacunas(),
         		x = "Fecha",
