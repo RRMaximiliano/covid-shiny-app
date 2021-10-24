@@ -367,6 +367,7 @@ Chinandega,2021-10-07,4
 Chinandega,2021-10-08,1
 Chinandega,2021-10-09,2
 Chinandega,2021-10-11,1
+Chinandega,2021-10-14,1
 Chontales,2020-03-25,3
 Chontales,2020-03-31,2
 Chontales,2020-04-06,1
@@ -527,6 +528,9 @@ Chontales,2021-10-07,13
 Chontales,2021-10-08,2
 Chontales,2021-10-09,1
 Chontales,2021-10-11,1
+Chontales,2021-10-15,3
+Chontales,2021-10-17,7
+Chontales,2021-10-19,1
 Esteli,2020-03-19,8
 Esteli,2020-03-20,4
 Esteli,2020-03-24,1
@@ -800,6 +804,11 @@ Esteli,2021-10-08,3
 Esteli,2021-10-09,1
 Esteli,2021-10-12,4
 Esteli,2021-10-13,1
+Esteli,2021-10-14,1
+Esteli,2021-10-15,3
+Esteli,2021-10-16,1
+Esteli,2021-10-17,1
+Esteli,2021-10-19,4
 Granada,2020-03-19,2
 Granada,2020-04-07,1
 Granada,2020-04-18,6
@@ -1473,6 +1482,11 @@ Leon,2021-10-09,3
 Leon,2021-10-10,4
 Leon,2021-10-11,2
 Leon,2021-10-13,2
+Leon,2021-10-14,5
+Leon,2021-10-16,1
+Leon,2021-10-18,1
+Leon,2021-10-19,2
+Leon,2021-10-20,2
 Madriz,2020-03-19,1
 Madriz,2020-03-21,1
 Madriz,2020-04-02,2
@@ -1702,6 +1716,9 @@ Madriz,2021-10-08,61
 Madriz,2021-10-10,36
 Madriz,2021-10-11,29
 Madriz,2021-10-12,26
+Madriz,2021-10-14,37
+Madriz,2021-10-15,31
+Madriz,2021-10-17,28
 Managua,2020-03-19,2
 Managua,2020-03-20,12
 Managua,2020-03-21,6
@@ -2187,7 +2204,14 @@ Managua,2021-10-09,11
 Managua,2021-10-10,1
 Managua,2021-10-11,10
 Managua,2021-10-12,7
-Managua,2021-10-13,13
+Managua,2021-10-13,16
+Managua,2021-10-14,10
+Managua,2021-10-15,13
+Managua,2021-10-16,4
+Managua,2021-10-17,6
+Managua,2021-10-18,7
+Managua,2021-10-19,5
+Managua,2021-10-20,3
 Masaya,2020-03-19,1
 Masaya,2020-03-21,2
 Masaya,2020-03-24,1
@@ -2417,6 +2441,10 @@ Masaya,2021-10-09,1
 Masaya,2021-10-10,1
 Masaya,2021-10-11,5
 Masaya,2021-10-12,1
+Masaya,2021-10-14,1
+Masaya,2021-10-15,5
+Masaya,2021-10-17,2
+Masaya,2021-10-18,2
 Matagalpa,2020-03-18,1
 Matagalpa,2020-03-23,1
 Matagalpa,2020-03-29,2
@@ -2738,6 +2766,10 @@ Matagalpa,2021-10-09,5
 Matagalpa,2021-10-10,2
 Matagalpa,2021-10-11,7
 Matagalpa,2021-10-12,14
+Matagalpa,2021-10-15,9
+Matagalpa,2021-10-17,9
+Matagalpa,2021-10-18,4
+Matagalpa,2021-10-19,2
 Nueva Segovia,2020-03-24,1
 Nueva Segovia,2020-04-03,1
 Nueva Segovia,2020-04-04,3
@@ -3119,6 +3151,7 @@ RACCS,2021-09-30,3
 RACCS,2021-10-01,2
 RACCS,2021-10-10,2
 RACCS,2021-10-13,1
+RACCS,2021-10-15,1
 Rio San Juan,2020-04-02,1
 Rio San Juan,2020-04-05,1
 Rio San Juan,2020-05-07,3

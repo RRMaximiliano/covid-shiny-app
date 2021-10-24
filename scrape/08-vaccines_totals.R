@@ -4,7 +4,9 @@
 library(ggrepel)
 library(tidyverse)
 library(scales)
-
+library(glue)
+library(hrbrthemes)
+library(ggtext)
 
 # Data and settings -------------------------------------------------------
 
@@ -19,7 +21,7 @@ vacunas <- read_csv("https://raw.githubusercontent.com/owid/covid-19-data/master
 # Cleaning ----------------------------------------------------------------
 
 df_plot <- vacunas %>% 
-	filter(location %in% c("Nicaragua", "Costa Rica", "El Salvador")) %>% 
+	filter(location %in% c("Nicaragua", "Costa Rica", "El Salvador", "Honduras", "Guatemala", "Panama")) %>% 
 	select(location, iso_code, date, total_vaccinations:people_fully_vaccinated) %>% 
 	pivot_longer(
 		cols = c(total_vaccinations:people_fully_vaccinated),
@@ -40,11 +42,13 @@ df_plot <- vacunas %>%
 
 vacunas_last <- df_plot %>% 
 	group_by(location) %>% 
-	filter(date == max(date)) 
+	filter(date == max(date),
+				 vars == "Total de vacunas administradas") 
 	
+fecha <- max(vacunas_last$date)
+
 
 # Plot --------------------------------------------------------------------
-
 df_plot %>% 
 	ggplot(
 		aes(
@@ -60,23 +64,24 @@ df_plot %>%
 		aes(
 			label = scales::comma(count)
 		), 
-		direction = "x", 
-		hjust = "right", 
-		vjust = -0.2,
+		direction = "y", 
+		hjust = "left", 
+		vjust = -0.05,
 		family = jetbrains,
 		show.legend = FALSE
 	) +
 	scale_y_continuous(labels = scales::label_number_si(), position = "right", limits = c(0, 10000000)) + 
 	scale_x_date(breaks = date_breaks("months"), labels = date_format("%b")) + 
-	scale_color_manual(values = c("#E69F00", "#56B4E9", "#009E73")) + 
+	scale_color_manual(values = c("#CC0000", "#7da1aa", "#E69F00", "#56B4E9", "#009E73", "#666699")) + 
 	coord_cartesian(clip = "off", expand = FALSE) + 
+	guides(colour = guide_legend(nrow = 1)) + 
 	facet_wrap(~ vars, scales = "free_y") +
 	labs(
 		x = "",
 		y = "",
 		color = "",
 		title = "Personas (completamente) vacunadas y total de vacunas administradas",
-		subtitle = "<span style = 'color:#009E73;'>Nicaragua</span> presenta niveles bajos de total de vacunas administradas",
+		# subtitle = "<span style = 'color:#009E73;'>Nicaragua</span> presenta niveles bajos de total de vacunas administradas",
 		caption = glue("Data: Our World in Data | Plot: @rrmaximiliano\nÚltima actualización: {fecha}")
 	) + 
 	theme_ipsum_rc() +
@@ -97,5 +102,5 @@ df_plot %>%
 
 ggsave(
 	here::here("plots", "vaccines_totals.png"),
-	dpi = 320, height = 10, width = 20, scale = 0.7, bg = "white"
+	dpi = 320, height = 12, width = 20, scale = 0.7, bg = "white"
 )
