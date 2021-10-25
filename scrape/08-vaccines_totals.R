@@ -123,16 +123,16 @@ df_plot <- vacunas %>%
 		vars = str_to_title(vars),
 		vars = as_factor(vars),
 		vars = case_when(
-			vars == "Total Vaccinations Per Hundred" ~ "Total de vacunas administradas por cada 100 mil habitantes", 
-			vars == "People Vaccinated Per Hundred" ~ "Personas vacunadas por cada 100 mil habitantes", 
-			vars == "People Fully Vaccinated Per Hundred" ~ "Personas completamente vacunadas por cada 100 mil habitantes"
+			vars == "Total Vaccinations Per Hundred" ~ "Total de vacunas administradas por cada 100 habitantes", 
+			vars == "People Vaccinated Per Hundred" ~ "Personas vacunadas por cada 100 habitantes", 
+			vars == "People Fully Vaccinated Per Hundred" ~ "Personas completamente vacunadas por cada 100 habitantes"
 		)
 	) 
 
 vacunas_last <- df_plot %>% 
 	group_by(location) %>% 
 	filter(date == max(date),
-				 vars == "Total de vacunas administradas por cada 100 mil habitantes") 
+				 vars == "Total de vacunas administradas por cada 100 habitantes") 
 
 fecha <- max(vacunas_last$date)
 
@@ -163,12 +163,12 @@ df_plot %>%
 	scale_color_manual(values = c("#CC0000", "#7da1aa", "#E69F00", "#56B4E9", "#009E73", "#666699")) + 
 	coord_cartesian(clip = "off", expand = FALSE) + 
 	guides(colour = guide_legend(nrow = 1)) + 
-	facet_wrap(~ vars, scales = "free_y", labeller = label_wrap_gen(width = 40)) +
+	facet_wrap(~ vars, scales = "free_y", labeller = label_wrap_gen(width = 35)) +
 	labs(
 		x = "",
 		y = "",
 		color = "",
-		title = "Personas (completamente) vacunadas y total de vacunas administradas por cada 100 mil habitantes",
+		title = "Personas (completamente) vacunadas y total de vacunas administradas por cada 100 habitantes",
 		# subtitle = "<span style = 'color:#009E73;'>Nicaragua</span> presenta niveles bajos de total de vacunas administradas",
 		caption = glue("Data: Our World in Data | Plot: @rrmaximiliano\nÚltima actualización: {fecha}")
 	) + 
